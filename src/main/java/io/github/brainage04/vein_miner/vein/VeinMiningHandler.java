@@ -57,6 +57,7 @@ public final class VeinMiningHandler {
         VeinMinerConfig config = VeinMinerConfigManager.getConfig();
         ItemStack tool = serverPlayer.getMainHandItem();
         if (!config.enableVeinMining
+                || tool.isEmpty()
                 || !VeinMinerPlayerSettings.shouldActivate(serverPlayer)
                 || !config.isBlockWhitelisted(state)
                 || !VeinMinerPlayerSettings.allowsBlock(serverPlayer, state)
